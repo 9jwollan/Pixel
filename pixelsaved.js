@@ -9,21 +9,31 @@ this.mygreen = g;
 
 
 
+
     this.addRed = function(n){
         //new = old then math
         this.myred = this.myred +n;
+        if(this.myred>255)
+        {this.myred=255}
     };
 
     this.addGreen = function(n){
         this.mygreen = this.mygreen +n;
+        if(this.mygreen>255)
+        {this.mygreen=255}
     };
 
     this.addBlue = function(n){
         this.myblue = this.myblue +n;
+        if(this.myblue>255)
+        {this.myblue=255}
     };
 
     this.brighten = function(n){
         //all three colors
+        this.myred = this.myred * (1+n);
+        this.mygreen = this.mygreen * (1+n);
+        this.myblue = this.myblue * (1+n)
     };
 
     this.complement = function(n){
@@ -41,9 +51,9 @@ this.mygreen = g;
 
 function report(mypixel){
     //reduces redundancy of code.
-    console.log("My red is :"+mypixel.red);
-    console.log("My green is :"+mypixel.green);
-    console.log("My blue is :"+mypixel.blue);
+    console.log("My red is :"+mypixel.myred);
+    console.log("My green is :"+mypixel.mygreen);
+    console.log("My blue is :"+mypixel.myblue);
 }
 
 //declares a main method to test the code.
